@@ -4,13 +4,14 @@ export default defineNuxtConfig({
     enabled: true,
 
     timeline: {
-      enabled: true
-    }
+      enabled: true,
+    },
   },
   modules: [
     "@nuxtjs/tailwindcss",
     "@formkit/auto-animate",
     "@vueuse/nuxt",
-    "nuxt-vitest"
-  ]
+    "nuxt-vitest",
+    "@nuxtjs/eslint-module",
+  ],
 })

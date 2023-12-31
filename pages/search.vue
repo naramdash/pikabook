@@ -10,10 +10,6 @@ const route = useRoute()
       >Learn more about Nuxt Routing</a
     >
   </div>
-
-  <hr />
-  <hr />
-  <hr />
-
-  <NuxtWelcome />
 </template>
+
+<style scoped></style>
