@@ -1,75 +1,23 @@
-# Nuxt 3 Minimal Starter
+# Book Recommend Service - Frontend
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Requirement
 
-## Setup
+Check package.json [`volta`](https://volta.sh/) field.
 
-Make sure to install the dependencies:
+- [Node.js](https://nodejs.org/) 20.10.0
+- [npm](https://docs.npmjs.com/) 10.2.5
 
-```bash
-# npm
-npm install
+## Toolchain
 
-# pnpm
-pnpm install
+- [Nuxt](https://nuxt.com/) 3.9
+- [Vue.js](https://vuejs.org/) 3.4
+- [Storybook](https://storybook.js.org/) 7.6
+- [ESLint](https://eslint.org/) (nuxt module integrated, CLI)
+- [Prettier](https://prettier.io/) (vscode ext autosave, CLI)
 
-# yarn
-yarn install
+## Deploy
 
-# bun
-bun install
-```
+[![Deploy Nuxt site to GitHub Pages](https://github.com/book-recommend-service/frontend/actions/workflows/ghpages-deploy-nuxtjs.yml/badge.svg)](https://github.com/book-recommend-service/frontend/actions/workflows/ghpages-deploy-nuxtjs.yml)
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Current: `github_pages`
+- Future: `????`

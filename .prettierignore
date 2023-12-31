@@ -1,5 +1,20 @@
-# Ignore artifacts:
-.nuxt
-.output
+# Settings
+.github
+.eslintrc.json
+.gitignore
+.prettierrc
+**/tsconfig.json
+package.json
+package-lock.json
+
+# Assets
 public
+
+# Artifacts
+.output
+.nuxt
+
+# Documents
+
 **/*.md
+**/*.mdx
