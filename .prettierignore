@@ -16,5 +16,5 @@ public
 
 # Documents
 
-**/*.md
-**/*.mdx
+# **/*.md
+# **/*.mdx
