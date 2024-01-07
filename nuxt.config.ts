@@ -7,5 +7,5 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "@formkit/auto-animate", "@vueuse/nuxt", "nuxt-vitest", "@nuxtjs/eslint-module"],
+  modules: ["@formkit/auto-animate", "@vueuse/nuxt"],
 })
