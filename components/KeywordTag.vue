@@ -68,6 +68,8 @@ const emit = defineEmits<{
   font-size: 1.3rem;
   font-weight: 600;
   color: white;
+
+  user-select: none;
 }
 
 .KeywordTag-root button {

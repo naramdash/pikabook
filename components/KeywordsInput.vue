@@ -32,7 +32,7 @@ function onTagRemoved(keyword: string) {
 
 function pushIfValid(inputElement: HTMLInputElement) {
   const input = inputElement.value
-  if (props.keywords.includes(input) && !props.selecteds.includes(input)) {
+  if (props.keywords.includes(input)) {
     emit("pushSelecteds", input)
     inputElement.value = ""
   }
@@ -41,15 +41,13 @@ function pushIfValid(inputElement: HTMLInputElement) {
 
 <template>
   <div class="KeywordsInput-root">
-    <div class="tags">
-      <KeywordTag
-        v-for="selected of props.selecteds"
-        :key="selected"
-        :keyword="selected"
-        selected
-        removable
-        @remove="onTagRemoved(selected)" />
-    </div>
+    <KeywordTag
+      v-for="selected of props.selecteds"
+      :key="selected"
+      :keyword="selected"
+      selected
+      removable
+      @remove="onTagRemoved(selected)" />
     <input
       ref="inputRef"
       type="text"
@@ -58,39 +56,31 @@ function pushIfValid(inputElement: HTMLInputElement) {
       @keydown.delete="onKeydownDelete(($event.target as HTMLInputElement).value)"
       @keydown.enter="pushIfValid($event.target as HTMLInputElement)"
       @change="pushIfValid($event.target as HTMLInputElement)" />
-
-    <datalist id="keywords">
-      <option
-        v-for="keyword of keywordsExceptSelecteds"
-        :value="keyword"></option>
-    </datalist>
   </div>
-  <button
-    type="button"
-    @click="selecteds.length = 1">
-    검색하기
-  </button>
+  <datalist id="keywords">
+    <option
+      v-for="keyword of keywordsExceptSelecteds"
+      :value="keyword"></option>
+  </datalist>
 </template>
 
 <style scoped>
 .KeywordsInput-root {
   display: flex;
-  background-color: white;
-
-  border-radius: 20px;
-  filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.85));
-
-  padding: 12px;
-
-  max-width: 50vw;
-  max-width: min(90vw, 800px);
-}
-
-.tags {
-  display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 5px;
+  background-color: white;
+
+  border-radius: 20px;
+  filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.25));
+
+  padding: 12px;
+  padding-bottom: 10px;
+
+  width: min(calc(90vw - 50px), 700px);
+
+  min-height: calc(22px + 1.5rem);
 }
 
 .KeywordsInput-root input {
@@ -107,7 +97,10 @@ function pushIfValid(inputElement: HTMLInputElement) {
   font-weight: 600;
 }
 .KeywordsInput-root input:disabled {
-  width: 0px;
-  background: transparent;
+  display: none;
+}
+
+.KeywordsInput-root option {
+  color: black;
 }
 </style>
