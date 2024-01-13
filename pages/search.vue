@@ -12,6 +12,8 @@ const keywords = [
 ]
 const selecteds = ref<string[]>([])
 
+const isPopover = ref(false)
+
 function pushIfValid(input: string) {
   if (keywords.includes(input) && !selecteds.value.includes(input)) selecteds.value.push(input)
 }
@@ -78,9 +80,13 @@ function pushIfValid(input: string) {
       </li>
     </ul>
 
-    <Button class="refresh"> 마음에 드는 단어가 없어요 </Button>
+    <Button
+      class="refresh"
+      @click="isPopover = true">
+      마음에 드는 단어가 없어요
+    </Button>
 
-    <SearchingPopover />
+    <SearchingPopover v-if="isPopover" />
   </div>
 </template>
 
