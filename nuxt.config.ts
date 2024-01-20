@@ -7,5 +7,5 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: ["@formkit/auto-animate", "@vueuse/nuxt"],
+  modules: ["@vueuse/nuxt", "@nuxt/ui"],
 })
