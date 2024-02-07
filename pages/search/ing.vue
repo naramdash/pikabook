@@ -1,7 +1,19 @@
+<script setup lang="ts">
+const route = useRoute()
+
+console.log(route.query.genre)
+console.log(route.query.keyword)
+
+console.log(route.fullPath)
+const urlSearchParams = new URLSearchParams(route.fullPath)
+$fetch(`/api/books?${urlSearchParams.toString()}`).then((data) => {
+  console.log(data)
+})
+</script>
+
 <template>
-  <div class="h-svh w-full relative">
-    <div
-      class="absolute w-fit h-fit left-0 right-0 ml-auto mr-auto top-0 bottom-0 mt-auto mb-auto flex flex-col items-center gap-2">
+  <div class="h-dvh w-full relative">
+    <div class="logo absolute w-fit h-fit left-0 right-0 ml-auto mr-auto flex flex-col items-center gap-2">
       <img
         class="w-12"
         src="~/assets/rect_logo.svg"
@@ -22,6 +34,9 @@
 </template>
 
 <style scoped>
+.logo {
+  top: 42%;
+}
 .bar {
   background-color: #00960f;
   border-radius: inherit;

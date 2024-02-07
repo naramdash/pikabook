@@ -7,7 +7,7 @@ const props = defineProps<{
 <template>
   <component
     :is="props.level"
-    class="font-bold leading-8">
+    class="font-bold text-lg leading-8">
     <slot></slot>
   </component>
 </template>

@@ -7,7 +7,7 @@ const index = 1
 
   <Heading
     level="h1"
-    class="pl-6">
+    class="pl-8">
     당신이 Pick한 <br />
     책이에요
   </Heading>
@@ -22,7 +22,7 @@ const index = 1
     <span class="text-gray-400">•</span>
   </div>
 
-  <div class="px-6 flex flex-col items-center">
+  <div class="px-8 flex flex-col items-center">
     <h1>세계의 끝과 하드보일드 원더랜드</h1>
     <div>무라카미 하루키</div>
 
