@@ -6,7 +6,12 @@ const router = useRouter()
 const genre = computed(() => route.query.genre as string)
 const label = computed(() => genres.find((g) => g.genre === genre.value)?.label)
 
-const { data: keywords } = useFetch("/api/keywords")
+const keywords = ref<string[]>([])
+onMounted(() => {
+  $fetch("/api/keywords").then((data) => {
+    keywords.value = data
+  })
+})
 
 const firstSelectedKeywords =
   typeof route.query.keyword === "undefined"
