@@ -18,6 +18,12 @@ import Flicking from "@egjs/vue3-flicking"
       <img src="/assets/books/book_example_4.png" />
       <img src="/assets/books/book_example_5.png" />
       <img src="/assets/books/book_example_6.png" />
+      <img src="/assets/books/book_example_1.png" />
+      <img src="/assets/books/book_example_2.png" />
+      <img src="/assets/books/book_example_3.png" />
+      <img src="/assets/books/book_example_4.png" />
+      <img src="/assets/books/book_example_5.png" />
+      <img src="/assets/books/book_example_6.png" />
     </Flicking>
 
     <Heading level="h2"> 당신이 원하는 <br />이야기를 찾아드려요 </Heading>
@@ -43,11 +49,11 @@ import Flicking from "@egjs/vue3-flicking"
       지금 바로 <br />Pick 해보세요 !
     </Heading>
 
-    <MainButton
+    <NuxtLink
       class="self-center"
-      @click="$router.push('/search/genre')">
-      START
-    </MainButton>
+      to="/search/genre">
+      <MainButton> START </MainButton>
+    </NuxtLink>
   </div>
 </template>
 

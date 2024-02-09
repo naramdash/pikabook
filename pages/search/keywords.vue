@@ -107,12 +107,12 @@ function toggleKeyword(keyword: string) {
         {{ keyword }}
       </button>
     </div>
-    <button
+    <NuxtLink
       v-if="selectedKeywords.length >= 3"
-      class="search-button fixed bottom-0 w-screen text-white py-4"
-      @click="$router.push(searchingUrl)">
+      class="search-button fixed bottom-0 w-screen text-white py-4 text-center"
+      :to="searchingUrl">
       다 골랐어요
-    </button>
+    </NuxtLink>
   </div>
 </template>
 

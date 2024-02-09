@@ -1,13 +1,12 @@
 <script setup lang="ts">
 const route = useRoute()
+const router = useRouter()
 
-console.log(route.query.genre)
-console.log(route.query.keyword)
-
-console.log(route.fullPath)
 const urlSearchParams = new URLSearchParams(route.fullPath)
 $fetch(`/api/books?${urlSearchParams.toString()}`).then((data) => {
-  console.log(data)
+  setTimeout(() => {
+    router.push({ path: "/result", query: { isbn: data.map((book) => book.isbn) } })
+  }, 700)
 })
 </script>
 
