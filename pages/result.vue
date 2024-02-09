@@ -67,7 +67,8 @@ function setPanelSize(panel: Panel) {
 
   <div
     v-if="books.length > 0"
-    :class="{ 'pointer-events-none': changingIndex }">
+    :class="{ 'pointer-events-none': changingIndex }"
+    class="pb-32">
     <div class="mb-6">
       <Flicking
         ref="flicking"
