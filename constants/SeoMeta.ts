@@ -3,8 +3,8 @@ export const SearchPageMeta = {
   ogTitle: "P!KABOOK | 당신이 원하는 이야기를 찾아드려요",
   description: "고전 문학, P!KABOOK에서 Pick해보세요!",
   ogDescription: "고전 문학, P!KABOOK에서 Pick해보세요!",
-  ogImage: "/previews/search.png",
-  twitterImage: "/previews/search.png",
+  ogImage: "https://pikabook.juho.kim/previews/search.png",
+  twitterImage: "https://pikabook.juho.kim/previews/search.png",
 } as const
 
 export const ResultPageMeta = {
@@ -12,6 +12,6 @@ export const ResultPageMeta = {
   ogTitle: "P!KABOOK | 내가 Pick한 고전 문학은?",
   description: "",
   ogDescription: "",
-  ogImage: "/previews/result.png",
-  twitterImage: "/previews/result.png",
+  ogImage: "https://pikabook.juho.kim/previews/result.png",
+  twitterImage: "https://pikabook.juho.kim/previews/result.png",
 } as const
