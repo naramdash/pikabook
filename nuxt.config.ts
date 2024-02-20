@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }],
+      meta: [{ name: "color-scheme", content: "only light" }],
     },
   },
   modules: ["@vueuse/nuxt", "@nuxt/ui"],

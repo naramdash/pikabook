@@ -67,7 +67,7 @@ function toggleKeyword(keyword: string) {
         <Transition>
           <span
             v-if="selectedKeywords.length >= 3"
-            class="inline-block mt-0.5"
+            class="block mt-0.5"
             >옆으로 밀면 선택한 모든 단어를 볼 수 있어요</span
           >
         </Transition>
@@ -89,7 +89,7 @@ function toggleKeyword(keyword: string) {
             v-for="keyword in selectedKeywords"
             :key="keyword"
             class="selected rounded-full w-max py-3 px-4 inline-flex flex-row items-center gap-1 text-white text-sm font-semibold">
-            <span>{{ keyword }}</span>
+            <span class="text-white">{{ keyword }}</span>
             <button
               type="button"
               class="flex items-center justify-center"
@@ -127,7 +127,8 @@ function toggleKeyword(keyword: string) {
 </template>
 
 <style scoped>
-p {
+p,
+p span {
   color: #54545499;
 }
 
