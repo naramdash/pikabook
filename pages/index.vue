@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Flicking from "@egjs/vue3-flicking"
+import { SearchPageMeta } from "~/constants/SeoMeta"
+
+useSeoMeta(SearchPageMeta)
 </script>
 
 <template>

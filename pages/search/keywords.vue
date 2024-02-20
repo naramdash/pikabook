@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { genres } from "~/Genres"
+import { SearchPageMeta } from "~/constants/SeoMeta"
+
+useSeoMeta(SearchPageMeta)
 
 const route = useRoute()
 const router = useRouter()
@@ -59,8 +62,15 @@ function toggleKeyword(keyword: string) {
 
       <p
         v-if="label"
-        class="text-sm mb-4">
+        class="text-sm mb-4 h-10">
         {{ label }}에서 선택 중...
+        <Transition>
+          <span
+            v-if="selectedKeywords.length >= 3"
+            class="inline-block mt-0.5"
+            >옆으로 밀면 선택한 모든 단어를 볼 수 있어요</span
+          >
+        </Transition>
       </p>
 
       <div
@@ -158,5 +168,15 @@ p {
 
 .search-button {
   background-color: #000000a6;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { SearchPageMeta } from "~/constants/SeoMeta"
+
+useSeoMeta(SearchPageMeta)
+
 const route = useRoute()
 const router = useRouter()
 

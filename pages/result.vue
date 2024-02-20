@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Flicking, { Panel, type MoveEvent } from "@egjs/vue3-flicking"
+import { ResultPageMeta } from "~/constants/SeoMeta"
+
+useSeoMeta(ResultPageMeta)
 
 const route = useRoute()
 

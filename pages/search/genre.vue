@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { genres } from "~/Genres"
+import { SearchPageMeta } from "~/constants/SeoMeta"
+
+useSeoMeta(SearchPageMeta)
 </script>
 
 <template>
