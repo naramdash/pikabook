@@ -19,7 +19,8 @@ export default defineEventHandler((event) => {
     const filtered = Books.filter((book) => isbns.includes(book.isbnYes24))
 
     return filtered.map(bookToResponseBook).slice(0, 5)
-  } else if (searchType === "genreAndKeywords") {
+  }
+  if (searchType === "genreAndKeywords") {
     const keywords = Array.isArray(keyword) ? keyword : [keyword]
     const filtered = Books.filter((book) => {
       const hasGenre = book.tags.includes(GenreMap[genre as keyof typeof GenreMap])
@@ -28,8 +29,21 @@ export default defineEventHandler((event) => {
       return hasGenre && hasKeyword
     })
 
+    const getScore = (keyword: string, index: number) => {
+      const k = keywords.includes(keyword) ? 1 : 0
+      const w = Math.max(10 - index, 0)
+      return k * w
+    }
+
+    filtered.sort((a, b) => {
+      const aScore = a.keywords.map(getScore).reduce((acc, cur) => acc + cur, 0)
+      const bScore = b.keywords.map(getScore).reduce((acc, cur) => acc + cur, 0)
+
+      return bScore - aScore
+    })
+
     return filtered.map(bookToResponseBook)
-  } else {
-    return []
   }
+
+  return []
 })
