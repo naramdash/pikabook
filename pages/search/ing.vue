@@ -6,8 +6,14 @@ useSeoMeta(SearchPageMeta)
 const route = useRoute()
 const router = useRouter()
 
-const urlSearchParams = new URLSearchParams(route.fullPath)
-$fetch(`/api/books?${urlSearchParams.toString()}`).then((data) => {
+$fetch(`/api/books`, {
+  method: "get",
+  query: {
+    searchType: "genreAndKeywords",
+    genre: route.query.genre,
+    keyword: route.query.keyword,
+  },
+}).then((data) => {
   setTimeout(() => {
     router.push({ path: "/result", query: { isbn: data.map((book) => book.isbn) } })
   }, 700)

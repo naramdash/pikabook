@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { genres } from "~/Genres"
+import { Genres } from "~/Genres"
 import { SearchPageMeta } from "~/constants/SeoMeta"
 
 useSeoMeta(SearchPageMeta)
@@ -14,7 +14,7 @@ useSeoMeta(SearchPageMeta)
 
     <div class="flex flex-row flex-wrap justify-between gap-4">
       <GenreButton
-        v-for="{ img, genre, label } in genres"
+        v-for="{ img, genre, label } in Genres"
         :img="img"
         :label="label"
         :to="'/search/keywords?genre=' + genre" />

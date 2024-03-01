@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { genres } from "~/Genres"
+import { Genres } from "~/Genres"
 import { SearchPageMeta } from "~/constants/SeoMeta"
 
 useSeoMeta(SearchPageMeta)
@@ -7,11 +7,11 @@ useSeoMeta(SearchPageMeta)
 const route = useRoute()
 const router = useRouter()
 const genre = computed(() => route.query.genre as string)
-const label = computed(() => genres.find((g) => g.genre === genre.value)?.label)
+const label = computed(() => Genres.find((g) => g.genre === genre.value)?.label)
 
 const keywords = ref<string[]>([])
 onMounted(() => {
-  $fetch("/api/keywords").then((data) => {
+  $fetch(`/api/keywords?genre=${genre.value}`).then((data) => {
     keywords.value = data
   })
 })

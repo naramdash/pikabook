@@ -23,7 +23,12 @@ type Book = {
 }
 const books = ref<Book[]>([])
 onMounted(() => {
-  $fetch("/api/books", { params: isbns }).then((data) => {
+  $fetch("/api/books", {
+    params: {
+      searchType: "isbns",
+      isbn: isbns,
+    },
+  }).then((data) => {
     books.value = data
   })
 })

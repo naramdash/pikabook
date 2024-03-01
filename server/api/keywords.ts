@@ -1,44 +1,11 @@
+import { Books, GenreMap } from "../../Books"
+
 export default defineEventHandler((event) => {
-  return [
-    "인간의 욕망",
-    "자연의 아름다움",
-    "인간의 본성",
-    "행복",
-    "동물의 질투",
-    "인간의 성공",
-    "인간관계",
-    "고립",
-    "인간의 희생",
-    "인간의 노력",
-    "사랑",
-    "동물의 야망",
-    "인간의 존엄성",
-    "가족간의 갈등",
-    "인간의 헌신",
-    "동물의 용서",
-    "인간의 죄악",
-    "도덕적 고뇌",
-    "현실과 환상의 경계",
-    "동물의 우정",
-    "사회적 문제",
-    "인간의 성장",
-    "인간의 가치",
-    "인간의 본성",
-    "자아의 탐색",
-    "시간과 공간의 상대성",
-    "인생의 의미",
-    "죽음과 부활",
-    "자유",
-    "인간의 삶",
-    "자기계발",
-    "창조성",
-    "인간의 두려움",
-    "희망",
-    "인간의 용기",
-    "자비",
-    "동물의 배신",
-    "동물의 변화",
-    "인간의 꿈",
-    "인간의 실패",
-  ]
+  const { genre } = getQuery(event)
+  if (genre == null) return [...new Set(Books.flatMap((book) => book.keywords))]
+
+  const genreLabel = GenreMap[genre as keyof typeof GenreMap]
+  if (genreLabel == null) return []
+
+  return [...new Set(Books.filter((book) => book.tags.includes(genreLabel)).flatMap((book) => book.keywords))]
 })

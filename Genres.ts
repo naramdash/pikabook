@@ -8,7 +8,7 @@ import NobelPrizeImg from "~/assets/genre_icons/nobelprize.svg"
 import OriginImg from "~/assets/genre_icons/origin.svg"
 // import BestsellerImg from "~/assets/genre_icons/bestseller.svg"
 
-export const genres = [
+export const Genres = [
   { img: RomanceImg, genre: "romance", label: "로맨스" },
   { img: FantasyImg, genre: "fantasy", label: "판타지" },
   { img: UniverseImg, genre: "universe", label: "인간과 우주" },
