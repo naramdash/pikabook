@@ -4,15 +4,18 @@ import { SearchPageMeta } from "~/constants/SeoMeta"
 
 useSeoMeta(SearchPageMeta)
 
-function resizeFlicking() {
-  const flicking = document.querySelector(".flicking") as HTMLDivElement
-  if (flicking) flicking.style.width = document.body.clientWidth - 2 + "px"
-}
 onMounted(() => {
-  document.body.addEventListener("resize", resizeFlicking)
-})
-onUnmounted(() => {
-  document.body.removeEventListener("resize", resizeFlicking)
+  const resize = () => {
+    const flicking = document.querySelector(".flicking") as HTMLDivElement
+    if (flicking) flicking.style.width = document.body.clientWidth - 2 + "px"
+  }
+  const resizeObserver = new ResizeObserver(resize)
+  resizeObserver.observe(document.body)
+  resize()
+
+  onUnmounted(() => {
+    resizeObserver.disconnect()
+  })
 })
 </script>
 
@@ -25,7 +28,7 @@ onUnmounted(() => {
     <Flicking
       :options="{ align: 'prev', circular: true }"
       :hideBeforeInit="true"
-      class="flicking -ml-8 w-svw h-72 space-x-3">
+      class="flicking -ml-8 w-full h-72 space-x-3">
       <img src="/assets/books/book_example_1.png" />
       <img src="/assets/books/book_example_2.png" />
       <img src="/assets/books/book_example_3.png" />
