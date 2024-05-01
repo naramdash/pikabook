@@ -2,7 +2,7 @@ import { Books, GenreMap } from "../../Books"
 
 function bookToResponseBook(book: (typeof Books)[number]) {
   return {
-    isbn: book.isbnYes24,
+    isbn: book.isbnMinumsa,
     imageUrl: book.imageUrlYes24,
     title: book.title,
     author: book.authors,
