@@ -8,6 +8,8 @@ onMounted(() => {
   const resize = () => {
     const flicking = document.querySelector(".flicking") as HTMLDivElement
     if (flicking) flicking.style.width = document.body.clientWidth - 2 + "px"
+    const guideBoxContainer = document.querySelector(".guide-box-container") as HTMLDivElement
+    if (guideBoxContainer) guideBoxContainer.style.width = document.body.clientWidth - 2 + "px"
   }
   const resizeObserver = new ResizeObserver(resize)
   resizeObserver.observe(document.body)
@@ -45,7 +47,7 @@ onMounted(() => {
 
     <Heading level="h2"> 당신이 원하는 <br />이야기를 찾아드려요 </Heading>
 
-    <div class="-ml-8 w-screen flex flex-col items-center gap-6">
+    <div class="guide-box-container -ml-8 w-screen flex flex-col items-center gap-6">
       <div class="guide-box rounded-xl bg-white w-4/5 pt-5 pb-6 flex flex-col items-center gap-2">
         <span>01</span>
         <span class="font-semibold text-center"> 장르를 <br />선택하세요 </span>
