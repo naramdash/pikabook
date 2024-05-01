@@ -11,14 +11,12 @@
     "prettier": "prettier . --write"
   },
   "devDependencies": {
-    "@nuxt/ui": "^2.14.1",
+    "@nuxt/ui": "^2.15.2",
     "@vueuse/nuxt": "^10.9.0",
-    "nuxt": "^3.10.3",
+    "nuxt": "^3.11.2",
     "prettier": "^3.2.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue": "^3.4.26",
+    "vue-router": "^4.3.2"
   },
   "engines": {
     "node": "^20.0.0"
